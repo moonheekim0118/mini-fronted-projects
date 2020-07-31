@@ -16,6 +16,7 @@ function setMovieInfo(index, price){
 
 // selected 된 seat의 개수로 count와 total을 Update 하는 하뭇 
 function updatedSelectedCount(){ 
+    movieTicketPrice = localStorage.getItem('selectedMoviePrice'); // ticket price 정하기 
     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
     const selecteSeatsCnt=selectedSeats.length;
     count.innerText=`${selecteSeatsCnt}`
@@ -47,7 +48,6 @@ function populateUI(){
             }
         })
     }
-    movieTicketPrice = localStorage.getItem('selectedMoviePrice'); // ticket price 정하기 
 }
 
 // container ==> 좌석선택 click 이벤트
