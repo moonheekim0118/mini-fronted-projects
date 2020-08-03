@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Hello World </title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img.jpg">
+        </div>
+        <h3>Hello, moonee</h3>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact me</a></li>
+        </ul>
+        <div class="githubLogo">
+            <a href="https://github.com/moonheekim0118">
+                <img src="githublogo.png" alt="">
+            </a>
+        </div>
+    </nav>
+    <header>
+        <button id="toggle" class="toggle">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <h1>Moonee's Hello World</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, obcaecati?</p>
+        <button class="cta-btn" id="open">Sign up</button>
+    </header>
+    <div class="container">
+        <h3>Who is mooone?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quasi nam magni, nihil aut minus minima quis nobis dolorum impedit.</p>
+        <h3>Do you know about me more?</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus id vel dolores hic officiis? Voluptate quo quibusdam natus voluptatibus, alias velit fuga modi ullam sed voluptas. Magni iusto laboriosam quis!</p>
+        <h3>Heres My Things</h3>
+        <ul>
+            <li> I want to be an engineer</li>
+            <li> I love yoga! </li>
+            <li> I really love animals</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos accusantium reiciendis possimus quasi veniam minus, est distinctio repellat incidunt eum ratione minima at ipsam harum odio cupiditate aspernatur? Nam unde quod laborum culpa labore alias fuga? Dicta porro a necessitatibus.</p>
+    </div>
+
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3>Sign Up</h3>
+            </div>
+            <div class="modal-content">
+                <p>Register my hompage !</p>
+                <form class="modal-form">
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter Name">
+                        <small>Error Message</small>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Enter E-mail">
+                        <small>Error Message</small>
+                    </div>
+                    <div class="form-control">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter Name">
+                        <small>Error Message</small>
+                    </div>
+                    <div class="form-control">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="confirmPassword" placeholder="Confirm Password">
+                        <small>Error Message</small>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" class="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

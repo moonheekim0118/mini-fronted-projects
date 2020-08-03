@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root{
+    --modal-duration:1s;
+    --primary-color:#30336b;
+    --secondary-color:#be2edd;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+body.show-nav{
+    /* width of the nav */
+    transform: translateX(200px);
+}
+
+nav{
+    background-color: var(--primary-color);
+    border-right:2px solid rgba(200,200,200,0.1);
+    color: #fff;
+    position: fixed; /*모든 main에서 배제되고 fixed postion에 놓여짐*/
+    top:0;
+    left:0;
+    width:200px;
+    height: 100vh;
+    z-index: 100; /*stack order of element*/
+    transform: translateX(-100%); /*시작 시 화면에서 아예 사라짐*/
+}
+
+nav .logo{
+    padding:30px 0 ;
+    text-align: center;
+}
+
+nav .logo img{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+
+}
+
+nav ul{
+    padding:0;
+    margin:0;
+    list-style-type: none; /*li 점 없애기*/
+}
+
+nav ul li:first-of-type{
+    border-top: 2px solid rgba(200,200,200,0.1);
+}
+
+nav ul li{
+    border-bottom: 2px solid rgba(200,200,200,0.1);
+    padding : 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    /* border-bottom:1px solid #fff; */
+    text-decoration: underline;
+}
+
+header{
+    background-color: var(--primary-color);
+    text-align: center;
+    color: #fff;
+    font-size: 130%;
+    position: relative; /* toggle 버튼 positon absolute로 하기 위해서 */
+    padding: 40px 15px;
+}
+
+header h1{
+    margin: 0;
+}
+
+header p{
+   margin: 30px 0
+}
+
+header .cta-btn{
+    font-size: 20px;
+    padding : 12px 30px;
+}
+
+header .toggle{
+    background-color: rgba(0,0,0,0.3);   
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+
+button, input[type='submit']{ 
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border:0;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: #fff;
+
+}
+
+button:focus{
+    outline: none;
+}
+
+.container{
+    padding:15px;
+    margin :0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+
+
+/* modal */
+
+.modal-container{
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom :0;
+}
+
+.modal-container.show-modal{
+    display: block;
+
+}
+
+.modal{
+    background-color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+}
+
+
+
+.modal-header{
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.modal-container{
+    padding: 20px;
+}
+.modal-header h3{
+    margin :0;
+}
+
+.modal-content{
+    padding: 20px;
+}
+
+.modal-form div{
+    margin: 15px 0;
+}
+
+.modal-form label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form input:not(.submit-btn){
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    padding: 8px;
+    width : 100%;
+}
+
+.close-btn{
+    background: transparent;
+    font-size:25px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+
+@keyframes  modalopen{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

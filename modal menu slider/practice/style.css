@@ -1,0 +1,261 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+:root{
+       --modal-duration:1s;
+       --primary-color:#243B0B;
+       --secondary-color:#DBA901; 
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+body.show-nav{
+    transform: translateX(300px);
+}
+
+
+/* navigation bar */
+nav{
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    top:0;
+    left:0;
+    border-right: 1px solid gray;
+    z-index: 100; /*stack order of element*/
+    transform: translateX(-100%); /*시작 시 화면에서 아예 사라짐*/
+}
+
+nav .logo{
+    padding: 20px 0;
+    text-align: center;
+}
+nav .logo img{
+    border: 2px solid var(--secondary-color);
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+}
+
+nav h3{
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(200,200,200,0.1);
+}
+
+nav ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+nav li{
+    margin: 50px 0;
+    text-align: center;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color:var(--secondary-color);
+    font-size:25px;
+}
+
+nav .githubLogo{
+    position: absolute;
+    bottom:0;
+    left:10px;
+}
+
+nav .githubLogo img{
+    height:50px;
+    width: 50px;
+}
+
+/* all buttons */
+
+button, input[type='submit']{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border: 0;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 20px;
+}
+
+button:focus{
+    outline: none;
+}
+
+/* header */
+
+header{
+    /* background-color: var(--primary-color); */
+    background-image: url("background-img.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding : 20px 0;
+    height: 250px;
+}
+
+header h1{
+    animation: .8s shake infinite alternate;
+}
+
+header p{
+    font-size: 24px;
+}
+header .toggle{
+    background-color: rgba(200,200,200,0.3);   
+    position: absolute;
+    top:10px;
+    left:10px;
+}
+
+
+/* main container */
+
+.container{
+    margin: 0 auto;
+    padding:15px;
+    max-width: 100%;
+    width: 800px;
+    text-align: center;
+}
+
+.container h3:hover{
+    color:var(--primary-color);
+}
+
+/* modal */
+
+ /* modal 띄워지면 뒷 배경 */
+
+.modal-container{
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    display: none;
+    top:0;
+    left:0;
+    right: 0;
+    bottom :0;
+    padding: 20px;
+}
+
+.modal-container.show-modal{
+    display: block;
+}
+
+
+.modal{ 
+    background-color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    max-width: 100%;
+    width: 400px;
+    transform: translate(-50%, -50%); /*x축 y축 움직이기*/
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+
+}
+
+.modal-header{
+    background-color: var(--primary-color);
+    color:#fff;
+    font-size: 20px;
+    padding: 5px 20px;
+} 
+
+.close-btn{
+    background: transparent;
+    font-size:25px;
+    color: #fff;
+    position: absolute;
+    right:0;
+}
+
+.modal-content p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.modal-form div{
+    margin: 15px 15px;
+}
+
+.modal-form label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    padding: 8px;
+    width : 100%;
+}
+
+.form-control.success input{
+    border-color: aqua;
+}
+
+.form-control.error input{
+    border-color: red;
+}
+.form-control input:focus{
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control small{
+    color: red;
+    visibility: hidden;
+}
+
+.form-control.error small{ 
+    visibility: visible;
+}
+
+@keyframes  modalopen{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+@keyframes shake {
+    0% { transform: skewX(-15deg); }
+    5% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    15% { transform: skewX(15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }  
+  }
+  
